@@ -37,13 +37,13 @@
                                 <rect key="frame" x="50" y="353" width="314" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1a-N1-X98">
                                 <rect key="frame" x="50" y="443" width="314" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDg-A6-8Do">
                                 <rect key="frame" x="76" y="547" width="62" height="38"/>
@@ -84,14 +84,124 @@
                     <view key="view" contentMode="scaleToFill" id="aH2-Ts-yNV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MGg-gb-1bH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="474" id="fgv-jm-q3B" customClass="PostCell" customModule="parstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="474"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fgv-jm-q3B" id="jGf-o3-ZXp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="474"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GME-NO-FV1">
+                                                    <rect key="frame" x="8" y="8" width="398" height="429"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="GME-NO-FV1" secondAttribute="height" multiplier="398:429" id="ckZ-IU-LFx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selyn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX6-lb-w9X">
+                                                    <rect key="frame" x="8" y="445" width="43" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Photos!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0R-rQ-uhv">
+                                                    <rect key="frame" x="59" y="445" width="347" height="20.333333333333314"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mX6-lb-w9X" firstAttribute="leading" secondItem="jGf-o3-ZXp" secondAttribute="leading" constant="8" id="QFf-AE-jFo"/>
+                                                <constraint firstItem="M0R-rQ-uhv" firstAttribute="leading" secondItem="mX6-lb-w9X" secondAttribute="trailing" constant="8" id="RRJ-a6-X2E"/>
+                                                <constraint firstAttribute="trailing" secondItem="M0R-rQ-uhv" secondAttribute="trailing" constant="8" id="RUc-fg-iBt"/>
+                                                <constraint firstItem="GME-NO-FV1" firstAttribute="top" secondItem="jGf-o3-ZXp" secondAttribute="top" constant="8" id="WLP-ig-NsP"/>
+                                                <constraint firstItem="GME-NO-FV1" firstAttribute="leading" secondItem="jGf-o3-ZXp" secondAttribute="leading" constant="8" id="cxA-fj-cLe"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="M0R-rQ-uhv" secondAttribute="bottom" constant="8" id="pmP-84-3HO"/>
+                                                <constraint firstItem="mX6-lb-w9X" firstAttribute="top" secondItem="GME-NO-FV1" secondAttribute="bottom" constant="8" id="tlS-aK-msR"/>
+                                                <constraint firstAttribute="trailing" secondItem="GME-NO-FV1" secondAttribute="trailing" constant="8" id="uHn-xx-OkE"/>
+                                                <constraint firstItem="M0R-rQ-uhv" firstAttribute="top" secondItem="GME-NO-FV1" secondAttribute="bottom" constant="8" id="zi7-Wp-2lO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="M0R-rQ-uhv" id="7dG-cc-Vz5"/>
+                                            <outlet property="photoView" destination="GME-NO-FV1" id="jyg-jN-bAK"/>
+                                            <outlet property="usernameLabel" destination="mX6-lb-w9X" id="b4w-Lt-uut"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5ag-vK-f5P"/>
                     </view>
-                    <navigationItem key="navigationItem" id="blW-dm-0HE"/>
+                    <navigationItem key="navigationItem" id="blW-dm-0HE">
+                        <barButtonItem key="rightBarButtonItem" title="+" image="insta_camera_btn" id="7bC-j8-6qu">
+                            <connections>
+                                <segue destination="MuO-8W-MQz" kind="presentation" id="agd-cs-EIN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="MGg-gb-1bH" id="Ndb-mD-24v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAP-bo-Fbs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1678.2608695652175" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1678.2608695652175" y="138.58695652173915"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="tVa-De-yZe">
+            <objects>
+                <viewController id="MuO-8W-MQz" customClass="CameraViewController" customModule="parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aoS-t3-cHp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="11O-Ri-4cQ">
+                                <rect key="frame" x="20" y="20" width="374" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ik3-5z-dCR" appends="YES" id="Mxz-S8-R5U"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Re-Qv-f7z">
+                                <rect key="frame" x="20" y="349" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lX2-xM-dCl">
+                                <rect key="frame" x="20" y="391" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onSubmitButton:" destination="MuO-8W-MQz" eventType="touchUpInside" id="J9v-f1-c6g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wGr-Or-WK1"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentField" destination="5Re-Qv-f7z" id="PrM-SV-XWZ"/>
+                        <outlet property="imageView" destination="11O-Ri-4cQ" id="dP6-6z-AHR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEb-2t-eKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ik3-5z-dCR">
+                    <connections>
+                        <action selector="onCameraButton:" destination="MuO-8W-MQz" id="o5a-tI-u9o"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2394.202898550725" y="138.58695652173915"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FlM-Qy-CEe">
@@ -113,6 +223,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
         <image name="instagram_logo" width="255" height="108"/>
     </resources>
 </document>
