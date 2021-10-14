@@ -16,12 +16,16 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var posts = [PFObject]()
     
+    let myRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
 
+        myRefreshControl.addTarget(self, action: #selector(viewDidAppear(_:)), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
         // Do any additional setup after loading the view.
     }
     
@@ -42,6 +46,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             }
         }
+        
+        self.myRefreshControl.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
