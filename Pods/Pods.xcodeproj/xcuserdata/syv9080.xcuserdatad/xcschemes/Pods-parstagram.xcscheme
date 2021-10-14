@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0ECC9552D53571C0778E711AD1112426"
-               BuildableName = "libPods-parstagram.a"
+               BuildableName = "Pods_parstagram.framework"
                BlueprintName = "Pods-parstagram"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

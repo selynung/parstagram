@@ -2,6 +2,8 @@
 # platform :ios, '9.0'
 
 target 'parstagram' do
+  use_frameworks!
+
   pod 'Parse'
   pod 'AlamofireImage'
 
