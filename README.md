@@ -25,3 +25,6 @@ Here's a walkthrough of implemented user stories:
 
 <img src="./parstagram1.gif" width=250><br>
 
+Launch Screen (appears for a split second before transitioning to login screen):
+
+<img src="./launch_screen.gif" width=250><br>
